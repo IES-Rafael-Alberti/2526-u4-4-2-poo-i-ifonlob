@@ -57,4 +57,38 @@ fun main() {
         println()
     }
 
+    /* EJERCICIO 4 */
+
+    try {
+        val coche1 = Coche("", "Ibiza", 90, 5, "1234ABC")
+    } catch (e: IllegalArgumentException) {
+        println("Error. La marca no puede estar vacía.")
+    }
+
+    try {
+        val coche2 = Coche("Seat", "Ibiza", 60, 5, "1234ABC")
+    } catch (e: IllegalArgumentException) {
+        println("Error. Los caballos tienen que estar comprendidos entre 70 y 700.")
+    }
+
+    try {
+        val coche3 = Coche("Seat", "Ibiza", 90, 2, "1234ABC")
+    } catch (e: IllegalArgumentException) {
+        println("Error. El número de puertas tiene que estar comprendido entre 3 y 5.")
+    }
+
+    try {
+        val coche4 = Coche("Seat", "Ibiza", 90, 5, "123ABC")
+    } catch (e: IllegalArgumentException) {
+        println("Error. La matrícula tiene que tener 7 caracteres.")
+    }
+    try{
+        val coche5 = Coche("Seat", "Málaga", 90, 5, "4577MKG")
+        coche5.color = ""
+    }
+    catch (e : IllegalArgumentException) {
+        println("Error. El color no puede ser nulo.")
+    }
+
+
 }
