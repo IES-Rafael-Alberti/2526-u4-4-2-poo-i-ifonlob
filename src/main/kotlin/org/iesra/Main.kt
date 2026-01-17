@@ -41,4 +41,20 @@ fun main() {
     println(persona3)
     val sonIguales : Boolean = persona2 == persona3
     println("Las personas 2 y 3 son la misma: ${if(sonIguales) "Sí" else "No"} ")
+
+    /* EJERCICIO 3 +*/
+    val personaA = Persona(60.0, 1.70, "Ana")
+    val personaB = Persona(80.0, 1.80, "Luis")
+    val personaC = Persona(50.0, 1.60, "María")
+    val personaD = Persona(95.0, 1.75, "Juan")
+    val personaE = Persona(72.0, 1.68, "Lucía")
+
+    val personas : List<Persona> = listOf(personaA,personaB,personaC,personaD,personaE)
+
+    for (persona in personas) {
+        println(persona.saludar())
+        println(persona.obtenerDesc())
+        println()
+    }
+
 }
