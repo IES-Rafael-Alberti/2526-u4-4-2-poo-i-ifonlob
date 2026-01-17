@@ -90,5 +90,64 @@ fun main() {
         println("Error. El color no puede ser nulo.")
     }
 
+    /* EJERCICIO 5 */
+    var horaStr : String = ""
+    var tiempo1 : Tiempo = Tiempo(0,0,0,)
+    do {
+        println("Introduzca una hora:")
+        horaStr = readln().trim()
+        if(horaStr.isBlank()) {
+            println("La hora no puede estar vacía. Intente de nuevo:")
+        }
+    } while (horaStr.isBlank())
+    val hora : Int = horaStr.toInt()
+    println("Introduzca los minutos:")
+    val minutos = readln().trim()
+    println("Introduzca los segundos:")
+    val segundos = readln().trim()
+    if(minutos.isBlank() && segundos.isBlank()) {
+        val tiempo1 = Tiempo(hora)
+        println(tiempo1)
+    }
+    else if(segundos.isBlank()) {
+        tiempo1 = Tiempo(hora,minutos.toInt())
+        println(tiempo1)
+    }
+    else{
+        tiempo1 = Tiempo(hora,minutos.toInt(),segundos.toInt())
+        println(tiempo1)
+    }
+
+    println("Introduzca ahora otra hora:")
+    val h = readln().trim().toInt()
+    println("Introduzca ahora otros minutos:")
+    val m = readln().trim().toInt()
+    println("Introduzca ahora otros segundos:")
+    val s = readln().trim().toInt()
+
+    val t = Tiempo(h,m,s)
+
+    if (tiempo1.incrementar(t)) {
+        println("Tiempo incrementado: $tiempo1")
+    }
+    else {
+        println("Error: al incrementar se superan las 23:59:59")
+    }
+    if (tiempo1.decrementar(t)) {
+        println("Tiempo decrementado: $tiempo1")
+    }
+    else {
+        println("Error: al decrementar se superan las 00:00:00")
+    }
+    if(tiempo1.comparar(t) == -1){
+        println("El primer tiempo es menor que el segundo.")
+    }
+    else if(tiempo1.comparar(t) == 1){
+        println("El primer tiempo es mayor que el segundo.")
+    }
+    else{
+        println("Los dos tiempos son iguales.")
+    }
+
 
 }
