@@ -1,96 +1,113 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/8gPRGAIg)
 # Práctica 4.2: Programación orientada a objetos I
-
-Apóyate en los siguientes recursos para realizar la práctica:
-
-[U4: 2. POO I](https://revilofe.github.io/section1/u04/practica/PROG-U4.-Practica002/)
-
-> ATENCIÓN: DURANTE LA DOCUMENTACIÓN DE LA PRÁCTICA, ELIMINA TODO AQUELLO QUE NO APLIQUE. PEEEEEEEROOOOOOO, ANTES DE ELIMINAR ALGO, PIENSA SI APLICA O NO.
-
----
 
 # Título de la Actividad
 
 ## Identificación de la Actividad
 
-- **ID de la Actividad:** [ID de la actividad]
-- **Módulo:** [Nombre del módulo] (`PROG`, `IS`, `EDES`, etc.)
-- **Unidad de Trabajo:** [Número y nombre de la unidad de trabajo]
-- **Fecha de Creación:** [Fecha de creación]
-- **Fecha de Entrega:** [Fecha de entrega]
+- **Módulo:** PROG
+- **Unidad de Trabajo:** U4 - POO I
+- **Fecha de Creación:** 17/01/2026
+- **Fecha de Entrega:** 18/01/2026
 - **Alumno(s):**
-  - **Nombre y Apellidos:** [Nombre y Apellidos del alumno o integrantes del grupo]
-  - **Correo electrónico:** [Correo electrónico g.educaand.es]
-  - **Iniciales del Alumno/Grupo:** [Iniciales del alumno o del grupo]
+  - **Nombre y Apellidos:** Irene Foncubierta Lobatón
+  - **Correo electrónico:** ifonlob1108@g.educaand.es
+  - **Iniciales del Alumno/Grupo:** IFL
 
 ## Descripción de la Actividad
 
-[Descripción detallada de la actividad, objetivos, y contexto necesario para comprenderla. Explicar en qué consiste la actividad y qué se espera que el alumno desarrolle o implemente.]
+En esta actividad se desarrollan varias clases sencillas en Kotlin para practicar los fundamentos de la programación orientada a objetos como la definición de clases, constructores primarios y secundarios, encapsulación, validación con `require`, propiedades calculadas y métodos de instancia.
+
+Los ejercicios consisten en implementar las clases `Rectangulo`, `Persona`, `Coche` y `Tiempo` con sus atributos y comportamientos específicos (cálculo de área y perímetro, IMC, validaciones de coche, operaciones con tiempo, etc.), y en un `main.kt` que crea objetos de estas clases, solicita datos por consola y prueba sus métodos.
 
 ## Instrucciones de Compilación y Ejecución
 
 1. **Requisitos Previos:**
+    - Lenguaje: Kotlin (versión 1.9.x o compatible)
+    - JDK 17 o superior instalado
+    - Opcional: IntelliJ IDEA / Kotlin plugin para facilitar la ejecución
+2. **Pasos para Compilar el Código (desde terminal, proyecto simple):**
 
-   - [Lenguaje de programación y versión]
-   - [Entorno de desarrollo o dependencias necesarias]
-2. **Pasos para Compilar el Código:**
+```bash
+kotlinc -include-runtime -d practica4_2.jar src/main/kotlin/org/iesra/*.kt
+```
 
-   ```bash
-   [Comando para compilar el código]
-   ```
 3. **Pasos para Ejecutar el Código:**
 
-   ```bash
-   [Comando para ejecutar la aplicación]
-   ```
-4. **Ejecución de Pruebas:**
+```bash
+java -jar practica4_2.jar
+```
 
-   ```bash
-   [Comandos para ejecutar pruebas, si las hubiera]
-   ```
+Si usas IntelliJ, basta con ejecutar la función `main()` de `Main.kt` desde el IDE.
+4. **Ejecución de Pruebas:**
+    - Las comprobaciones se han realizado de forma manual ejecutando el programa y probando los distintos casos de entrada (valores válidos e inválidos).
 
 ## Desarrollo de la Actividad
 
 ### Descripción del Desarrollo
 
-[Explicación de cómo se ha abordado el desarrollo de la actividad, incluyendo las decisiones de diseño, estructura del código y enfoque de resolución de problemas. Se recomienda adjuntar diagramas o capturas de pantalla si es necesario.]
+El desarrollo se ha dividido en cinco ejercicios, cada uno centrado en una clase distinta y en un conjunto de requisitos:
+
+- **Ejercicio 1 – Rectangulo:** Clase con `base` y `altura` en el constructor, validación para que sean mayores que 0, métodos `area()` y `perimetro()`, y un `toString()` que muestra todos estos datos.
+- **Ejercicios 2 y 3 – Persona:** Clase `Persona` con constructores primarios (peso y altura) y secundario (peso, altura y nombre), propiedad calculada `imc`, métodos `saludar`, `alturaEncimaMedia`, `pesoEncimaMedia`, `obtenerDescImc` y `obtenerDesc`, además del uso de `equals` para comparar personas.
+- **Ejercicio 4 – Coche:** Clase `Coche` con validaciones en el `init` y en el setter de `color`, uso de propiedades no modificables (`val`) para marca, modelo, caballos, puertas y matrícula, y formato capitalizado para marca y modelo.
+- **Ejercicio 5 – Tiempo:** Clase `Tiempo` que representa horas del día entre 00:00:00 y 23:59:59 con varios constructores, normalización de minutos y segundos, y métodos para incrementar, decrementar, comparar, copiar, sumar y restar tiempos, además de comprobaciones de límites.
 
 ### Código Fuente
 
-[Aquí se incluirá un enlace directo a los archivos de código fuente en el repositorio, por ejemplo, si se está usando GitHub: `src/main.kt` o algún enlace directo.]
+- `src/main/kotlin/org/iesra/Main.kt` – [Programa principal con la ejecución de los 5 ejercicios](https://github.com/IES-Rafael-Alberti/2526-u4-4-2-poo-i-ifonlob/blob/ad09b715b9a20e9eedd5201102d3010c13a0449a/src/main/kotlin/org/iesra/Main.kt)
+- `src/main/kotlin/org/iesra/Rectangulo.kt` – [Implementación de la clase `Rectangulo`](https://github.com/IES-Rafael-Alberti/2526-u4-4-2-poo-i-ifonlob/blob/ad09b715b9a20e9eedd5201102d3010c13a0449a/src/main/kotlin/org/iesra/Rectangulo.kt)
+- `src/main/kotlin/org/iesra/Persona.kt` – [Implementación de la clase `Persona`](https://github.com/IES-Rafael-Alberti/2526-u4-4-2-poo-i-ifonlob/blob/ad09b715b9a20e9eedd5201102d3010c13a0449a/src/main/kotlin/org/iesra/Persona.kt)
+- `src/main/kotlin/org/iesra/Coche.kt` – [Implementación de la clase `Coche`](https://github.com/IES-Rafael-Alberti/2526-u4-4-2-poo-i-ifonlob/blob/ad09b715b9a20e9eedd5201102d3010c13a0449a/src/main/kotlin/org/iesra/Coche.kt)
+- `src/main/kotlin/org/iesra/Tiempo.kt` – [Implementación de la clase `Tiempo`](https://github.com/IES-Rafael-Alberti/2526-u4-4-2-poo-i-ifonlob/blob/ad09b715b9a20e9eedd5201102d3010c13a0449a/src/main/kotlin/org/iesra/Tiempo.kt)
 
-[Si hay varios ejercicios, habrá una documentación, por cada uno de los ejercicios.]
-[Por cada ejercicio, habrá enlaces embebidos de código a las clases principales y programa principal `main` ]
 
 ### Ejemplos de Ejecución
 
-- **Entrada 1:** Descripción de la entrada y valor de prueba.
-- **Salida Esperada 1:** Explicación de la salida esperada y el resultado de la prueba.
+- **Ejercicio 1 – Rectángulo:**
+    - Entrada:
+        - Se crean tres rectángulos con las dimensiones:
+            - `Rectangulo(15.0, 25.0)`
+            - `Rectangulo(45.0, 35.0)`
+            - `Rectangulo(30.0, 20.0)`
+    - Salida esperada (resumen):
+        - Se muestran por pantalla los tres rectángulos con su base, altura, área y perímetro, por ejemplo:  
+          `Rectángulo con base 15.0 y altura 25.0 tiene de área 375.0 y de perímetro 80.0`.
+
+- **Ejercicio 2 – Persona (cambio de nombre):**
+    - Entrada:
+        - Nombre para la persona 1: `Ana`
+    - Salida esperada (resumen):
+        - Se muestra `persona1` con el nuevo nombre, su peso y altura.
+        - Se muestran los datos de `persona3` antes y después de cambiar la altura a 1.80 m y su IMC actualizado.
+        - Se iguala la altura de `persona2` a la de `persona3` y se comprueba si son iguales con `equals`.
+
+- **Ejercicio 4 – Coche (validaciones):**
+    - Entrada:
+        - Intento de crear coches con marca vacía, caballos fuera de rango, puertas fuera de rango, matrícula de longitud incorrecta y color inválido.
+    - Salida esperada:
+        - Mensajes de error indicando por qué no se pueden crear/modificar esos objetos (por ejemplo, “La marca no puede estar vacía.”, “La matrícula tiene que tener 7 caracteres.”, etc.).
+
+- **Ejercicio 5 – Tiempo:**
+    - Entrada:
+        - Hora inicial: `10`
+        - Minutos: `30`
+        - Segundos: `15`
+        - Segundo tiempo: `1` hora, `40` minutos, `50` segundos
+    - Salida esperada (resumen):
+        - Se muestra el primer tiempo creado en formato `XXh XXm XXs`.
+        - Resultado de incrementar y decrementar con el segundo tiempo, o mensajes de error si se superan los límites.
+        - Comparación entre ambos tiempos, copia, suma y resta con los mensajes correspondientes.
 
 ### Resultados de Pruebas
 
-[Aquí se detallará cómo se ha verificado la funcionalidad del código, incluyendo resultados de pruebas automatizadas o manuales, en caso de que las haya.]
+La funcionalidad se ha verificado manualmente probando:
 
-## Documentación Adicional
-
-- **Manual de Usuario:** [Enlace a la documentación del usuario, si existe]
-- **Autorización de Permisos:** Verificar que el profesor tenga permisos de lectura en el repositorio para revisar el código.
+- Creación de objetos con valores válidos y visualización mediante `toString()`.
+- Introducción de valores inválidos para `Coche` (marca vacía, caballos fuera de rango, puertas incorrectas, matrícula incorrecta y color vacío) comprobando que se lanzan `IllegalArgumentException` y se muestran los mensajes.
+- Cambios de peso y altura en `Persona` para comprobar que la propiedad calculada `imc` se actualiza correctamente.
+- Diferentes valores de tiempo para comprobar el comportamiento de `incrementar`, `decrementar`, `sumar` y `restar` dentro y fuera de los límites 00:00:00 y 23:59:59.
 
 ## Conclusiones
 
-[Resumen de las conclusiones alcanzadas al desarrollar la actividad, las lecciones aprendidas, y posibles mejoras que se puedan implementar en futuras entregas.]
+La práctica me ha permitido afianzar los conceptos básicos de POO en Kotlin, entre ellos el uso de constructores primarios y secundarios, encapsulación, validaciones con `require`, propiedades calculadas y diseño de métodos específicos para cada clase.
 
-## Referencias y Fuentes
-
-[Aquí se listarán las fuentes consultadas para el desarrollo de la actividad, tales como documentación oficial, artículos, o cualquier recurso externo relevante.]
-
-### Notas Adicionales:
-
-1. **Nombres de Archivos y Repositorios:**
-   - Asegúrate de que el nombre del archivo o repositorio siga la estructura definida: `XXX-idActividad-Iniciales`.
-2. **Permisos:**
-   - Verifica que el profesor tenga los permisos necesarios para acceder al repositorio o documento.
-3. **Formato:**
-   - Si se entrega en formato PDF o Google Docs, asegúrate de cumplir con el mínimo y máximo de folios establecidos.
-4. **Compilación y Ejecución:**
-   - Detalla claramente cómo compilar y ejecutar el código, incluyendo las instrucciones en el archivo `README.md`.
