@@ -5,22 +5,21 @@ class Persona(var peso : Double,var altura : Double){
         this.nombre = nombre
     }
     var nombre : String = ""
-    val imc = this.peso / (this.altura * this.altura)
-    override fun toString(): String {
-        return "Persona con peso ${this.peso} kg, altura ${this.altura}m e IMC de ${String.format("%.2f", this.imc)}"
-    }
+    val imc : Double
+        get() = this.peso / (this.altura * this.altura)
+
     fun saludar() : String{
         return "Hola, me llamo ${this.nombre}."
     }
 
     fun alturaEncimaMedia() : Boolean{
-        return if(this.altura > 1.75){
+        return if(this.altura >= 1.75){
             true
         }
         else false
     }
     fun pesoEncimaMedia() : Boolean{
-        return if(this.peso > 70){
+        return if(this.peso >= 70){
             true
         }
         else false
@@ -36,5 +35,9 @@ class Persona(var peso : Double,var altura : Double){
     }
     fun obtenerDesc(): String {
         return "La persona $nombre tiene un IMC de $imc, que corresponde a ${obtenerDescImc()}."
+    }
+
+    override fun toString(): String {
+        return "Persona con peso ${this.peso} kg, altura ${this.altura}m e IMC de ${String.format("%.2f", this.imc)}"
     }
 }
