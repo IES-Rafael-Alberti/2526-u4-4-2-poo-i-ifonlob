@@ -27,6 +27,7 @@ fun main() {
             println("El nombre no puede estar vacío. Inténtelo de nuevo:")
         }
     } while (nuevoNombre.isEmpty())
+    persona1.nombre = nuevoNombre
     println("Nombre:${persona1.nombre} Peso:${persona1.peso} Altura:${persona1.altura}")
 
     println("Datos de la persona 3:")
@@ -149,5 +150,15 @@ fun main() {
         println("Los dos tiempos son iguales.")
     }
 
+    println("El resultado de copiar el tiempo es de :  ${tiempo1.copiar()}")
 
+    tiempo1.copiar(t)
+
+    println("Ahora el tiempo pasa a valer: $tiempo1")
+
+    println("El resultado de sumar el primer tiempo con el segundo es de: ${tiempo1.sumar(t)}")
+    println("El resultado de restar el primer tiempo con el segundo es de: ${tiempo1.restar(t)}")
+
+    println("El primer tiempo es mayor que el segundo: ${if(tiempo1.esMayorQue(t)) "Sí" else "No"}")
+    println("El primer tiempo es enor que el segundo: ${if(tiempo1.esMenorQue(t)) "Sí" else "No"}")
 }
